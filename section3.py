@@ -89,7 +89,7 @@ for i in range(len(a)):
     for j in range(i+1, len(a)):
         if sum != M:
             sum += a[j]
-        elif sum == M:
+        if sum == M:
             cnt += 1
             break
 print(cnt)
