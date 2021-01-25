@@ -77,7 +77,7 @@ for i in range(1, len(array)):
 for x in array:
     print(x, end=' ')
 
-# 수들의 합
+# 수의 합
 '''
 이중 포문으로 타임에러가 나는 코드 *
 '''
