@@ -3,6 +3,7 @@
 # 다음 수와 더해서 경우의 수는 4개 -> one two three four
 # d[i] = d[i-1] + triangle[i][?]
 # 다음 행으로 갈때 현재의 j위치를 기억하여 사용
+
 def solution(triangle):
     answer = 0
     d = [0] * 500
@@ -39,17 +40,12 @@ def solution(triangle):
     return answer
 
 
-triangle = [[7], [3, 8], [8, 1, 0], [2, 7, 4, 4], [4, 5, 2, 6, 5]]
-a = solution(triangle)
-print(a)
-
-
 # 정답 코드
 
 
 def solution(triangle):
     for i in range(1, len(triangle)):
-        for j in range(i + 1):
+        for j in range(len(triangle[i])):
             if j == 0:
                 triangle[i][j] += triangle[i - 1][j]
             elif j == i:
@@ -57,3 +53,8 @@ def solution(triangle):
             else:
                 triangle[i][j] += max(triangle[i - 1][j], triangle[i - 1][j - 1])
     return max(triangle[-1])
+
+
+triangle = [[7], [3, 8], [8, 1, 0], [2, 7, 4, 4], [4, 5, 2, 6, 5]]
+a = solution(triangle)
+print(a)
