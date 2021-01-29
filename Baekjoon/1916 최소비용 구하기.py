@@ -1,7 +1,6 @@
 import heapq
 import sys
 
-sys.stdin = open("input.txt", "rt")
 input = sys.stdin.readline
 
 INF = int(1e9)
