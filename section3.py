@@ -207,4 +207,35 @@ a[n].insert(a[n].pop())
 제일 뒤에 있는 자료 꺼내 맨앞으로 넣기 - insert
 '''
 
-# 봉우리
+# 봉우리 *
+import sys
+sys.stdin = open("input.txt", 'r')
+'''
+# feedback
+# 상, 우, 하, 좌
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+'''
+n = int(input())
+
+a = [list(map(int, input().split())) for _ in range(n)]
+a. insert(0, [0]*n)
+a. append([0]*n)
+answer = 0
+for x in a:
+    x.insert(0, 0)
+    x.append(0)
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        now = a[i][j]
+        up = a[i-1][j]
+        down = a[i+1][j]
+        left = a[i][j-1]
+        right = a[i][j+1]
+        # if all(a[i][j] > a[i+dx[k]][j+dy[k]] for k in range(4)):
+        if now > up and now > down and now > left and now > right:
+            answer += 1
+
+print(answer)
+
+# 스도쿠 검사
