@@ -9,6 +9,7 @@ m = int(input())
 graph = [[INF] * (n + 1) for _ in range(n + 1)]
 for _ in range(m):
     a, b, c = map(int, input().split())
+    # 두 정점 사이의 간선이 여러 개라면 더 짧은 간선을 저장한다.
     graph[a][b] = min(c, graph[a][b])
 
 for k in range(1, n + 1):
