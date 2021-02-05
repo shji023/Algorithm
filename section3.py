@@ -239,28 +239,29 @@ for i in range(1, n+1):
 print(answer)
 
 # 스도쿠 검사 - 답안 참조
-import sys
-sys.stdin=open("input.txt", "r")
 def check(a):
     for i in range(9):
-        ch1=[0]*10
-        ch2=[0]*10
+        # 행을 체크하기 위한 배열
+        row_ch = [0]*10
+        # 열을 체크하기 위한 배열
+        col_ch = [0]*10
         for j in range(9):
-            ch1[a[i][j]]=1
-            ch2[a[j][i]]=1
-        if sum(ch1)!=9 or sum(ch2)!=9:
+            row_ch[a[i][j]] = 1
+            col_ch[a[j][i]] = 1
+        if sum(row_ch) != 9 or sum(col_ch) != 9:
             return False
     for i in range(3):
         for j in range(3):
-            ch3=[0]*10
+            # 3 * 3 그룹을 체크하기 위한 배열
+            group_ch = [0]*10
             for k in range(3):
                 for s in range(3):
-                    ch3[a[i*3+k][j*3+s]]=1
-            if sum(ch3)!=9:
+                    group_ch[a[i*3+k][i*3+s]] = 1
+            if sum(group_ch) != 9:
                 return False
     return True
 
-a=[list(map(int, input().split())) for _ in range(9)]
+a = [list(map(int, input().split())) for _ in range(9)]
 if check(a):
     print("YES")
 else:
