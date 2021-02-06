@@ -266,3 +266,22 @@ if check(a):
     print("YES")
 else:
     print("NO")
+
+# 격자판 회문수 *
+a = [list(map(int, input().split())) for _ in range(7)]
+cnt = 0
+for i in range(7):
+    for j in range(3):
+        if a[i][j] == a[i][j+4] and a[i][j+1] == a[i][j+3]:
+            cnt += 1
+for y in range(7):
+    for x in range(3):
+        if a[x][y] == a[x+4][y] and a[x+1][y] == a[x+3][y]:
+            cnt += 1
+print(cnt)
+'''
+# 0~4 열 까지 슬라이스 (가로)
+tmp = a[j][i:i+5]
+# 회문체크(역순과 같은지)
+if tmp == tmp[::-1]
+'''
