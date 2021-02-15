@@ -5,7 +5,7 @@ a = list(int(input())for _ in range(N))
 a.sort()
 for x in a:
     print(x)
-    
+
 '''
 시간초과
 import sys
