@@ -55,9 +55,11 @@ for i in range(1, v + 1):
 원소가 모두 같은 집합에 속하는 경우,노드의 개수가 N, find 혹은 union 연산의 개수가 M이면 시간복잡도 O(VM)이 되어 비효율적
 경로 압축(Path Compression)기법 적용
 '''
+
 # 기존 find 함수 수정
 def find_parent(parent, x):
     if parent[x] != x:
         parent[x] = find_parent(parent, parent[x])
     return parent[x]
+
 # 부모 테이블의 원소가 최상위 노드로 다 변경됨
