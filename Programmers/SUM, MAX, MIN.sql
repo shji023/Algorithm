@@ -14,12 +14,3 @@ FROM ANIMAL_INS;
 SELECT COUNT(DISTINCT NAME)
 FROM ANIMAL_INS
 WHERE NAME IS NOT NULL;
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-
-/**/
