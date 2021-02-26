@@ -1,0 +1,17 @@
+/*고양이와 개는 몇 마리 있을까*/
+SELECT ANIMAL_TYPE, COUNT(ANIMAL_ID)
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE;
+/*동명 동물 수 찾기*/
+SELECT NAME, COUNT(NAME) AS COUNT
+FROM ANIMAL_INS
+GROUP BY NAME
+HAVING COUNT(NAME)>1
+ORDER BY NAME;
+/*입양 시각 구하기(1)*/
+SELECT HOUR(dateTime) as HOUR, count(HOUR(dateTime)) as COUNT 
+FROM ANIMAL_OUTS
+where HOUR(dateTime) >8 and HOUR(dateTime) < 20
+group by HOUR(dateTime)
+order by HOUR(dateTime);
