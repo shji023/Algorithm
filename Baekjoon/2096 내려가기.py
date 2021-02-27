@@ -15,6 +15,7 @@
 import sys
 import copy
 input = sys.stdin.readline
+
 N = int(input())
 
 for i in range(N):
