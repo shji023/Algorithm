@@ -5,6 +5,7 @@ N = int(input())
 arr = [list(map(int, input().split()))for _ in range(N)]
 arr.sort()
 answer = 0
+
 for i in range(N):
     if i == 0:
         start = arr[0][0]
@@ -19,4 +20,5 @@ for i in range(N):
             answer += arr[i][1] - arr[i][0]
         start = arr[i][0]
         end = arr[i][1]
+        
 print(answer)
