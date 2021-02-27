@@ -15,6 +15,7 @@ input = sys.stdin.readline
 
 T = int(input())
 result = []
+
 for _ in range(T):
     nums = dict()
     d = deque()
