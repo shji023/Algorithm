@@ -40,5 +40,5 @@ for i in range(N):
                 except IndexError:
                     continue
             answer = max(result, answer)
-            
+
 print(answer)
