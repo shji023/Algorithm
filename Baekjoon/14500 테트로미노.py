@@ -29,6 +29,7 @@ shape = [
     [[0, 1], [1, 0], [1, 1], [1, 2]],
     [[0, 0], [1, 0], [1, 1], [2, 0]],
 ]
+
 for i in range(N):
     for j in range(M):
         for s in shape:
@@ -39,4 +40,5 @@ for i in range(N):
                 except IndexError:
                     continue
             answer = max(result, answer)
+            
 print(answer)
