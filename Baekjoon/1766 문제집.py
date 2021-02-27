@@ -28,5 +28,4 @@ def topology_sort():
     for i in result:
         print(i, end=' ')
 
-
 topology_sort()
