@@ -6,6 +6,7 @@ arr = list(map(int, input().split()))
 operator = list(map(int, input().split()))
 Max, Min = -1000000001, 1000000001
 
+
 # idx로 숫자 입력 받은거 차례로
 def dfs(idx, answer, add, sub, mul, div):
     global Max, Min
