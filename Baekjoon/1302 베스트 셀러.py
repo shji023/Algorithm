@@ -1,6 +1,7 @@
 N = int(input())
 dic = {}
 max_arr = []
+
 for i in range(N):
     book = input()
     if book in dic:
