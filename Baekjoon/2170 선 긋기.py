@@ -20,5 +20,5 @@ for i in range(N):
             answer += arr[i][1] - arr[i][0]
         start = arr[i][0]
         end = arr[i][1]
-        
+
 print(answer)
