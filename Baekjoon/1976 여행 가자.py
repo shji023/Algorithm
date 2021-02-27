@@ -22,6 +22,7 @@ M = int(input())
 parent = [0] * (N + 1)
 graph = [list(map(int, input().split())) for _ in range(N)]
 plan = list(map(int,input().split()))
+
 for i in range(1, N+1):
     parent[i] = i
 for i in range(N):
