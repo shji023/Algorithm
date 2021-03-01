@@ -4,6 +4,7 @@ input = sys.stdin.readline
 
 N, K = map(int, input().split())
 Max = 100001
+
 def bfs(start):
     queue = deque([start])
     while queue:
