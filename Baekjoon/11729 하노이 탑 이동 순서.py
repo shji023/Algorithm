@@ -3,6 +3,7 @@ input = sys.stdin.readline
 
 n = int(input())
 print(2**n -1)
+
 def hanoi(n, s, other, e):
     if n == 0:
         return
