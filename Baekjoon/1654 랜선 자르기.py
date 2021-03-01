@@ -1,8 +1,8 @@
 import sys
 input = sys.stdin.readline
+
 K, N = map(int, input().split())
 arr = list(int(input()) for _ in range(K))
-
 start = 1
 end = max(arr)
 
