@@ -1,6 +1,7 @@
 N = int(input())
 d = [0] * 1000001
 cnt = 0
+
 for i in range(2, N+1):
     d[i] = d[i-1]+1
     if i % 2 == 0:
