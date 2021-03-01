@@ -1,10 +1,12 @@
 import sys
 input = sys.stdin.readline
+
 N, M = map(int, input().split())
 a = list(int(input()) for i in range(N))
 a.sort()
 start, end = 0, 0
 answer = sys.maxsize
+
 while start < N and end < N:
     sub = a[end]-a[start]
     if sub == M:
