@@ -3,7 +3,6 @@ import sys
 input = sys.stdin.readline
 
 INF = int(1e9)
-
 N, M = map(int, input().split())
 start = int(input())
 graph = [[] for i in range(N + 1)]
