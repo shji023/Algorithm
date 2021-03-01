@@ -2,12 +2,9 @@ import heapq
 import sys
 
 input = sys.stdin.readline
-
 INF = int(1e9)
-
 N = int(input())
 M = int(input())
-
 graph = [[] for i in range(N + 1)]
 
 for _ in range(M):
