@@ -11,4 +11,5 @@ for start in range(N):
     if interval_sum == M:
         cnt += 1
     interval_sum -= a[start]
+
 print(cnt)
