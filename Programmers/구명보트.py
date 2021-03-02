@@ -2,6 +2,7 @@
 에러 코드
 1. 보트에 두명만 탈 수 있다는 것을 고려x
 2. 첫번째 부터 태우고 나머지 중 무게 들어갈 수 있는 거 더 태우는 방식으로 함
+
 def solution(people, limit):
     answer = 0
     sumP = 0
