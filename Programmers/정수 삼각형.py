@@ -4,6 +4,7 @@
 # d[i] = d[i-1] + triangle[i][?]
 # 다음 행으로 갈때 현재의 j위치를 기억하여 사용
 
+
 def solution(triangle):
     answer = 0
     d = [0] * 500
