@@ -25,4 +25,5 @@ def solution(n, times):
     answer = binary_search(times, n, 0, end)
     return answer
 
+
 print(solution(1, [2, 2]))
