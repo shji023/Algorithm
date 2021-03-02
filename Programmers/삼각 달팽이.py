@@ -20,4 +20,5 @@ def solution(n):
             answer.append(r)
     return answer
 
+
 solution(4)
