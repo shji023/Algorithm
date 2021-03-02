@@ -16,6 +16,7 @@ def solution(number, k):
         answer += str(max)
     return answer
 
+
 # stack을 이용한 풀이
 def solution(number, k):
     answer = ''
