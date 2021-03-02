@@ -12,7 +12,7 @@ def dfs(x, sum, numbers, target):
 
 def solution(numbers, target):
     global answer
-    
+
     answer = 0
     dfs(0, 0, numbers, target)
     return answer
