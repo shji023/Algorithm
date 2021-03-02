@@ -14,6 +14,7 @@ def solution(participant, completion):
 
 # 해시로 풀기 (참조한 코드)
 
+
 def solution(participant, completion):
     answer = ''
     dic = {}
