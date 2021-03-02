@@ -12,6 +12,7 @@ def bfs(computers, i, visited,n):
                 if visited[t] == False:
                     queue.append(t)
 
+
 def solution(n, computers):
     answer = 0
     visited = [False] * n
