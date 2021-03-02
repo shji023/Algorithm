@@ -17,6 +17,8 @@
 최소한의 자릿수인 한자리수가 셋째자리 숫자를 가질 수 있도록 x3을 한 후,
 큰 것 부터 앞으로 (내림차순 정렬)
 '''
+
+
 def solution(numbers):
     answer = ''
     # numbers 를 string으로
