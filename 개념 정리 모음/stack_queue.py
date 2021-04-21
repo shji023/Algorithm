@@ -38,3 +38,16 @@ queue.reverse()
 #deque([4,1,7,3])
 print(queue)
 
+# 덱
+from collections import deque
+# rotate 함수
+# Contain 1, 2, 3, 4, 5 in deq
+deq = deque([1, 2, 3, 4, 5])
+
+deq.rotate(1)
+print(deq)
+# deque([5, 1, 2, 3, 4])
+
+deq.rotate(-1)
+print(deq)
+# deque([1, 2, 3, 4, 5])
