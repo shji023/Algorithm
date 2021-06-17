@@ -33,3 +33,73 @@ def solution(phone_number):
             temp.append(phone_number[i])
     answer = "".join(temp)
     return answer
+
+# 하샤드 수
+def solution(x):
+    answer = True
+    temp = str(x)
+    num = 0
+    for i in temp:
+        num += int(i)
+    if x % num != 0:
+        answer = False
+    return answer
+
+# 평균 구하기
+def solution(arr):
+    Sum = 0
+    for i in arr:
+        Sum += i
+    answer = Sum/len(arr)
+    return answer
+
+# 콜라츠 추측
+def solution(num):
+    answer = 0
+    while num != 1:
+        if answer <= 500:
+            if num % 2 == 0:
+                num = num/2
+            elif num % 2 == 1:
+                num = (num * 3) + 1
+            answer += 1
+        else:
+            answer = -1
+            break
+    return answer
+
+# 최대공약수와 최소공배수
+def solution(n, m):
+    answer = []
+    a = n
+    b = m
+    while b > 0:
+        a, b = b, a % b
+    answer.append(a)
+    answer.append(n*m/a)
+    return answer
+
+# 짝수와 홀수
+def solution(num):
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+# 제일 작은 수 제거하기
+def solution(arr):
+    if len(arr) > 1:
+        arr.remove((min(arr)))
+        return arr
+    else:
+        return [-1]
+
+# 정수 제곱근 판별
+import math
+
+def solution(n):
+    num = math.sqrt(n)
+    if num == int(num):
+        return pow(num+1, 2)
+    else:
+        return -1
