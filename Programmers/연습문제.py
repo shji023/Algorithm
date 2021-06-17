@@ -22,3 +22,14 @@ def solution(arr1, arr2):
             answer[i].append(arr1[i][j]+arr2[i][j])
     return answer
 
+# 핸드폰 번호 가리기
+def solution(phone_number):
+    temp = []
+    n = len(phone_number)
+    for i in range(n):
+        if i < n-4:
+            temp.append("*")
+        else:
+            temp.append(phone_number[i])
+    answer = "".join(temp)
+    return answer
