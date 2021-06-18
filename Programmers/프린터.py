@@ -20,3 +20,27 @@ def solution(priorities, location):
             deqPri.append(deqPri[0])
             deqPri.popleft()
     return answer
+
+# 다른 방법
+def solution(pri, location):
+    cnt = 0
+    while True:
+        Max = max(pri)
+        v = pri.pop(0)
+        if v >= Max:
+            if location == 0:
+                cnt += 1
+                return cnt
+                break
+            else:
+                cnt += 1
+                if location == 0:
+                    location = len(pri) - 1
+                else:
+                    location -= 1
+        else:
+            pri.append(v)
+            if location == 0:
+                location = len(pri) - 1
+            else:
+                location -= 1
