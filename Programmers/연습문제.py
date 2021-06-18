@@ -103,3 +103,10 @@ def solution(n):
         return pow(num+1, 2)
     else:
         return -1
+
+# 정수 내림차순으로 배치하기
+def solution(n):
+    numList = list(str(n))
+    numList.sort(reverse=True)
+    answer = "".join(numList)
+    return int(answer)
