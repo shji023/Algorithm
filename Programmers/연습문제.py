@@ -110,3 +110,38 @@ def solution(n):
     numList.sort(reverse=True)
     answer = "".join(numList)
     return int(answer)
+
+# 자릿수 더하기
+def solution (n):
+    numList = list(map(int, str(n)))
+    sumList = 0
+    for i in numList:
+        sumList += i
+    return sumList
+
+# 이상한 문자 만둘기
+def solution(s):
+    sample = list(s)
+    index = 0
+    for i in range(len(s)):
+        if sample[i].isalpha():
+            if index % 2 == 0:
+                sample[i] = sample[i].upper()
+            else:
+                sample[i] = sample[i].lower()
+            index += 1
+        elif sample[i] == " ":
+            index = 0
+    return ("".join(str(j) for j in sample))
+
+# 문자열을 정수로 바꾸기
+def solution(s):
+    arr = list(s)
+    if arr[0] == "+":
+        arr.pop(0)
+        return int("".join(arr))
+    elif arr[0] == "-":
+        arr.pop(0)
+        return -1 * int("".join(arr))
+    else:
+        return int(s)
