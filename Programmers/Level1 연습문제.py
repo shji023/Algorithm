@@ -277,3 +277,23 @@ def solution(arr):
         if arr[i] != arr[i-1]:
             answer.append(arr[i])
     return answer
+
+# 가운데 글자 가져오기
+def solution(s):
+    if len(s) % 2 != 0:
+        mid = (len(s)//2)
+        return s[mid]
+    else:
+        mid = (len(s)//2) - 1
+        return s[mid]+s[mid+1]
+    
+# 2016년
+def solution(a, b):
+    temp = 5
+    day = ["SUN","MON","TUE","WED","THU","FRI","SAT"]
+    year = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    for i in range(a):
+        temp += year[i]
+    temp += b - 1
+    print(temp)
+    return day[temp%7]
