@@ -111,6 +111,15 @@ def solution(n):
     answer = "".join(numList)
     return int(answer)
 
+# 자연수 뒤집어 배열로 만들기
+def solution(n):
+    numList = list(str(n))
+    temp = []
+    for i in range(len(numList)-1,-1,-1):
+        temp.append(numList[i])
+    answer = [int(i) for i in temp]
+    return answer
+
 # 자릿수 더하기
 def solution (n):
     numList = list(map(int, str(n)))
@@ -134,6 +143,29 @@ def solution(s):
             index = 0
     return ("".join(str(j) for j in sample))
 
+#약수의 합
+def solution(n):
+    mid = int(pow(n, 0.5))
+    arr = []
+    for i in range(1, mid + 1):
+        if n % i == 0:
+            arr.append(i)
+    length = len(arr)
+    for j in range(length):
+        if n/arr[j] != arr[j]:
+            arr.append(n/arr[j])
+    return(int(sum(arr)))
+
+# 시저암호
+def solution(s, n):
+    s = list(s)
+    for i in range(len(s)):
+        if s[i].isupper():
+            s[i] = chr((ord(s[i])-ord('A') + n)%26 + ord('A'))
+        elif s[i].islower():
+            s[i] = chr((ord(s[i]) - ord('a') + n) % 26 + ord('a'))
+    return "".join(s)
+
 # 문자열을 정수로 바꾸기
 def solution(s):
     arr = list(s)
@@ -145,3 +177,103 @@ def solution(s):
         return -1 * int("".join(arr))
     else:
         return int(s)
+
+# 수박?
+def solution(n):
+    answer = []
+    for i in range(n):
+        if i % 2 == 0:
+            answer.append("수")
+        else:
+            answer.append("박")
+    return "".join(answer)
+
+# 소수 찾기
+def solution(n):
+    ch = [0]*(n+1)
+    cnt = 0
+    for i in range(2, n+1):
+        if ch[i] == 0:
+            cnt += 1
+            for j in range(i, n+1, i):
+                ch[j] = 1
+    return cnt
+
+# 서울에서 김서방 찾기
+def solution(seoul):
+    for i in range(len(seoul)):
+        if seoul[i]=="Kim":
+            return "김서방은 "+str(i)+"에 있다"
+
+# 문자열 다루기 기본
+def solution(s):
+    if s.isdigit():
+        if len(s) == 4 or len(s) == 6:
+            return True
+        else:
+            return False
+    else:
+        return False
+
+# 문자열 내림차순으로 배치하기
+def solution(s):
+    arr = list(s)
+    arr.sort(reverse=True)
+    return "".join(arr)
+
+# 문자열 내 p와 y의 개수
+def solution(s):
+    new = s.lower()
+    print(new)
+    cntP, cntY = 0, 0
+    for i in range(len(s)):
+        if new[i] == "p":
+            cntP += 1
+        elif new[i] == "y":
+            cntY += 1
+    if cntP > 0 or cntY > 0:
+        if cntP == cntY:
+            return True
+        else:
+            return False
+    else:
+        return True
+
+# 문자열 내 마음대로 정렬하기
+def solution(strings, n):
+    return sorted(sorted(strings), key=lambda x: x[n])
+
+# 두 정수 사이의 합
+def solution(a, b):
+    Sum = 0
+    if a>b:
+        for i in range(b, a+1):
+            Sum += i
+    elif a<b:
+        for i in range(a, b+1):
+            Sum += i
+    else:
+        return a
+    return Sum
+
+# 나누어 떨어지는 숫자 배열
+def solution(arr, divisor):
+    answer = []
+    for i in range(len(arr)):
+        if arr[i]%divisor == 0:
+            answer.append(arr[i])
+    if not answer:
+        answer.append(-1)
+        return answer
+    else:
+        answer.sort()
+        return answer
+
+# 같은 숫자는 싫어
+def solution(arr):
+    answer = []
+    answer.append(arr[0])
+    for i in range(1, len(arr)):
+        if arr[i] != arr[i-1]:
+            answer.append(arr[i])
+    return answer
