@@ -30,3 +30,21 @@ def solution(numbers):
     answer = str(int(answer))
     return answer
 
+def solution(numbers):
+    answer = ''
+    if numbers.count(0)==len(numbers):
+        return "0"
+    for i in range(0,len(numbers)):
+        numbers[i]=str(numbers[i])
+    numbers.sort(reverse=True)
+    i=1
+    while i<=len(numbers)-1:
+        if numbers[i]+numbers[i-1] > numbers[i-1]+numbers[i]:
+            a=numbers[i-1]
+            numbers[i-1]=numbers[i]
+            numbers[i]=a
+            i-=2
+        i+=1
+    for i in range(0,len(numbers)):
+        answer+=numbers[i]
+    return answer
