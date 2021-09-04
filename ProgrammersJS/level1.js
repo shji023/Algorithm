@@ -209,3 +209,25 @@ function solution(s) {
 대문자로 변경 : toUpperCase()
 소문자로 변경 : toLowerCase()
 */
+
+//약수의 합
+function solution(n) {
+  let answer = [];
+  let sqrtN = Math.sqrt(n);
+  let sum = 0;
+  for (let i = 1; i < sqrtN + 1; i++) {
+    if (n % i === 0) {
+      answer.push(i);
+    }
+  }
+  let half = answer.length;
+  for (let i = 0; i < half; i++) {
+    if (n / answer[i] !== answer[i]) {
+      answer.push(n / answer[i]);
+    }
+  }
+  if (answer.length !== 0) {
+    sum = answer.reduce((a, b) => a + b);
+  }
+  return sum;
+}
