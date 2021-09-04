@@ -185,3 +185,27 @@ function solution(n) {
   }
   return sumN;
 }
+
+// 이상한 문자 만들기
+function solution(s) {
+  let index = 0;
+  s = s.split("");
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == " ") {
+      index = 0;
+    } else {
+      if (index % 2 == 0) {
+        s[i] = s[i].toUpperCase();
+      } else {
+        s[i] = s[i].toLowerCase();
+      }
+      index += 1;
+    }
+  }
+  s = s.join("");
+  return s;
+}
+/*
+대문자로 변경 : toUpperCase()
+소문자로 변경 : toLowerCase()
+*/
