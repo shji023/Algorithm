@@ -231,3 +231,18 @@ function solution(n) {
   }
   return sum;
 }
+
+//문자열을 정수로 바꾸기
+function solution(s) {
+  let answer = 0;
+  if (s[0] === "-") {
+    answer = parseInt(s.substr(1, s.length - 1));
+    answer = answer * -1;
+  } else {
+    if (s[0] === "+") {
+      answer = parseInt(s.substr(1, s.length - 1));
+    }
+    answer = parseInt(s);
+  }
+  return answer;
+}
