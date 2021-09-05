@@ -231,6 +231,7 @@ function solution(n) {
   }
   return sum;
 }
+// 합 : 배열.reduce((a, b) => a + b);
 
 //문자열을 정수로 바꾸기
 function solution(s) {
