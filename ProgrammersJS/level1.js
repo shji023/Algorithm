@@ -246,3 +246,35 @@ function solution(s) {
   }
   return answer;
 }
+
+//수박수박수박수박수박수?
+function solution(n) {
+  let answer = "";
+  for (let i = 0; i < n; i++) {
+    if (i % 2 === 0) {
+      answer += "수";
+    } else {
+      answer += "박";
+    }
+  }
+  return answer;
+}
+
+//소수 찾기
+function solution(n) {
+  let arr = Array.from({ length: n + 1 }, () => 0);
+  let cnt = 0;
+  for (let i = 2; i < n + 1; i++) {
+    if (arr[i] === 0) {
+      cnt += 1;
+      for (let j = i; j < n + 1; j += i) {
+        arr[j] = 1;
+      }
+    }
+  }
+  return cnt;
+}
+/*
+자바스크립트 Array : 객체
+Array.from() : Array.from({length: 길이}, (v, i)=>i 원하는 값 반환하는 콜백함수)
+*/
