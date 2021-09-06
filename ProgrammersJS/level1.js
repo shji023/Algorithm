@@ -279,3 +279,18 @@ function solution(n) {
 자바스크립트 Array : 객체
 Array.from() : Array.from({length: 길이}, (v, i)=>i 원하는 값 반환하는 콜백함수)
 */
+
+//서울에서 김서방 찾기
+function solution(seoul) {
+  for (let i = 0; i < seoul.length; i++) {
+    if (seoul[i] === "Kim") {
+      return "김서방은 " + i + "에 있다";
+    }
+  }
+}
+//다른 사람 좋은 풀이
+function findKim(seoul) {
+  var idx = seoul.indexOf("Kim");
+  return "김서방은 " + idx + "에 있다";
+}
+// 포문보다 좋은듯
