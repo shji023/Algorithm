@@ -81,3 +81,43 @@ function solution(str) {
 //배열, 그리디, 정렬
 //배열, DFS
 //문제 해결 실패
+
+//배열, DFS - 수정 필요 if dfs 문이 작동하지않음
+const dfs = (x, y, word, puzzle, index) => {
+  if (x <= -1 || x >= 4 || y <= -1 || y >= 4) {
+    return false;
+  }
+  if (puzzle[x][y] === word[index]) {
+    index += 1;
+    dfs(x - 1, y, word, puzzle, index);
+    dfs(x, y - 1, word, puzzle, index);
+    dfs(x + 1, y, word, puzzle, index);
+    dfs(x, y + 1, word, puzzle, index);
+    if (index === 4) {
+      return true;
+    }
+  }
+  return false;
+};
+
+function solution(puzzle, word) {
+  let result = false;
+  let index = 0;
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      if (dfs(i, j, word, puzzle, index) === 4) {
+        result = true;
+        return result;
+      }
+    }
+  }
+  return result;
+}
+
+/*
+  자바스크립트 2차원 배열 초기화
+  const graph = new Array(n);
+  for(let i =0; i< graph.length; i++){
+    graph[i] = new Array(n);
+  }
+*/
