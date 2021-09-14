@@ -1,4 +1,4 @@
-// 배열, 해시
+// 1. 배열, 해시
 function solution(mistake) {
   let answer = [];
   let original = Array.from({ length: mistake.length }, (v, i) => i + 1);
@@ -37,52 +37,22 @@ function solution(mistake) {
   },{}); // { '1': 2, '2': 2, '3': 4, '4': 1 }
   //기존에 key로 존재하지 않으면 0, 있으면 기존값에 +=1;
 */
-
-//배열, 이진탐색, 큐
-function solution(arr, num) {
-  let total = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr[0].length; j++) {
-      total.push(arr[i][j]);
-    }
+//1 - 1
+function solution(nums) {
+  const length = nums.length;
+  let students = [...Array(length + 1).keys()].slice(1);
+  /*arr.keys()
+  let arr = ['a', 'b', 'c']
+  let denseKeys = [...arr.keys()] // [0,1,2]
+  */
+  for (disappear of nums) {
+    students[disappear - 1] = -1;
   }
-  total.sort((a, b) => a - b);
-  return total[num - 1];
-}
-//런타임에러날듯
-
-//부분배열, 슬라이딩 윈도우
-function solution(str) {
-  let arr = str.split("");
-  let duplicate = {};
-  let max_length = 0;
-  let start = 0;
-  for (const [index, element] of arr.entries()) {
-    if (
-      Object.keys(duplicate).includes(element) &&
-      start <= duplicate[element]
-    ) {
-      start = duplicate[element] + 1;
-    } else {
-      max_length = Math.max(max_length, index - start + 1);
-    }
-    duplicate[element] = index;
-  }
-  return max_length;
+  /*nums 돌면서 있으면 students에 해당 값 -1, students에서 0보다 안큰 값이 정답 */
+  return students.filter((total) => 0 < total);
 }
 
-/*
-  Objects.entries : [key, value]쌍의 배열을 반환 
-  배열에서 [key, value]쌍의 배열을 반환 하기 : const [index, element] of 배열.entries()
-  객체 key값 있는지 확인 : Object.keys(객체).includes(찾고자하는요소)
-*/
-
-//배열, 그리디, 힙
-//배열, 그리디, 정렬
-//배열, DFS
-//문제 해결 실패
-
-//배열, DFS - 수정 필요 if dfs 문이 작동하지않음
+//2. 배열, DFS - 수정 필요 if dfs 문이 작동하지않음
 const dfs = (x, y, word, puzzle, index) => {
   if (x <= -1 || x >= 4 || y <= -1 || y >= 4) {
     return false;
@@ -121,3 +91,72 @@ function solution(puzzle, word) {
     graph[i] = new Array(n);
   }
 */
+
+//3. 배열, 이진탐색, 큐 - 런타임에러날듯
+function solution(arr, num) {
+  let total = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[0].length; j++) {
+      total.push(arr[i][j]);
+    }
+  }
+  total.sort((a, b) => a - b);
+  return total[num - 1];
+}
+
+function solution(arr, num) {
+  let lastIndex = arr.length - 1;
+  let min = arr[0][0];
+  let max = arr[lastIndex][lastIndex] + 1;
+  while (min < max) {
+    let mid = Math.floor((min + max) / 2);
+    let cnt = 0;
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[i][j] <= mid) {
+          cnt++;
+        } else {
+          break;
+        }
+      }
+    }
+    if (cnt < num) {
+      min = mid + 1;
+      console.log(min);
+    } else {
+      max = mid;
+    }
+  }
+  return min;
+}
+
+//부분배열, 슬라이딩 윈도우
+function solution(str) {
+  let arr = str.split("");
+  let duplicate = {};
+  let max_length = 0;
+  let start = 0;
+  for (const [index, element] of arr.entries()) {
+    if (
+      Object.keys(duplicate).includes(element) &&
+      start <= duplicate[element]
+    ) {
+      start = duplicate[element] + 1;
+    } else {
+      max_length = Math.max(max_length, index - start + 1);
+    }
+    duplicate[element] = index;
+  }
+  return max_length;
+}
+
+/*
+  Objects.entries : [key, value]쌍의 배열을 반환 
+  배열에서 [key, value]쌍의 배열을 반환 하기 : const [index, element] of 배열.entries()
+  객체 key값 있는지 확인 : Object.keys(객체).includes(찾고자하는요소)
+*/
+
+//배열, 그리디, 힙
+//배열, 그리디, 정렬
+//배열, DFS
+//문제 해결 실패
