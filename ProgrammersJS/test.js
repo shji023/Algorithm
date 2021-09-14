@@ -73,89 +73,19 @@ function solution(s) {
 
 console.log(solution(" 123"));
 */
-function solution(arr, num) {
-  let lastIndex = arr.length - 1;
-  let min = arr[0][0];
-  let max = arr[lastIndex][lastIndex] + 1;
-  while (min < max) {
-    let mid = Math.floor((min + max) / 2);
-    let cnt = 0;
-    for (let i = 0; i < arr.length; i++) {
-      for (let j = 0; j < arr.length; j++) {
-        if (arr[i][j] <= mid) {
-          cnt++;
-        } else {
-          break;
-        }
-      }
-    }
-    if (cnt < num) {
-      min = mid + 1;
-      console.log(min);
-    } else {
-      max = mid;
-    }
-  }
-  return min;
+function solution(str) {
+  const alpha = [];
+  let temp = 0;
+  return str.split("").reduce((longest, index, initial) => {
+    temp = temp <= alpha[index] ? alpha[index] + 1 : temp;
+    alpha[index] = initial;
+    return Math.max(longest, initial - temp + 1);
+  }, 0);
 }
-/*
-console.log(
-  solution(
-    [
-      [3, 33, 24, 45],
-      [6, 7, 9, 66],
-      [3, 5, 88, 98],
-      [4, 9, 55, 99],
-    ],
-    12
-  )
-);
 
-console.log(solution([[1, 3]], 1));
-
-console.log(solution([[3]], 1));
-
-console.log(
-  solution(
-    [
-      [1, 2],
-      [3, 4],
-    ],
-    3
-  )
-);
-console.log(
-  solution(
-    [
-      [1, 3, 3, 4],
-      [1, 5, 6, 7],
-      [1, 2, 3, 99],
-      [1, 2, 3, 100],
-    ],
-    11
-  )
-);
-
-console.log(
-  solution(
-    [
-      [4, 5, 6, 7, 8],
-      [11, 12, 13, 14, 15],
-      [15, 16, 19, 33, 35],
-      [6, 8, 20, 22, 88],
-      [8, 55, 66, 77, 100],
-    ],
-    11
-  )
-);
-*/
-console.log(
-  solution(
-    [
-      [1, 2, 22],
-      [3, 4, 23],
-      [8, 9, 33],
-    ],
-    7
-  )
-);
+//console.log(solve("abcd"));
+//console.log(solve("abcab"));
+//console.log(solve("bbbb"));
+console.log(solution("asscssf"));
+//console.log(solve("yeongmin"));
+//console.log(solve("noooeoool"));

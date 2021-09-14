@@ -150,6 +150,15 @@ function solution(str) {
   return max_length;
 }
 
+function solution(str) {
+  const alpha = [];
+  let temp = 0;
+  return str.split("").reduce((longest, index, initial) => {
+    temp = temp <= alpha[index] ? alpha[index] + 1 : temp;
+    alpha[index] = initial;
+    return Math.max(longest, initial - temp + 1);
+  }, 0);
+}
 /*
   Objects.entries : [key, value]쌍의 배열을 반환 
   배열에서 [key, value]쌍의 배열을 반환 하기 : const [index, element] of 배열.entries()
