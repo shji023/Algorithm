@@ -130,7 +130,7 @@ function solution(arr, num) {
   return min;
 }
 
-//부분배열, 슬라이딩 윈도우
+//4. 부분배열, 슬라이딩 윈도우
 function solution(str) {
   let arr = str.split("");
   let duplicate = {};
@@ -165,7 +165,21 @@ function solution(str) {
   객체 key값 있는지 확인 : Object.keys(객체).includes(찾고자하는요소)
 */
 
-//배열, 그리디, 힙
-//배열, 그리디, 정렬
-//배열, DFS
-//문제 해결 실패
+//5.배열, 그리디, Heap - 문제 이해 실패
+//6. 배열, 그리디, Sorting
+const solve = (time, distance) => {
+  const dist = distance.length;
+  let enemy = [];
+  let defense = 0;
+  for (let i = 0; i < dist; i++) {
+    enemy.push(distance[i] / time[i]); /*(거리/시간)*/
+  }
+  enemy.sort((x, y) => x - y); /*오름차순 정렬*/
+  for (const soldier of enemy) {
+    if (soldier - defense <= 0) {
+      break;
+    }
+    defense++; /*속력안에 막은 적군들 수*/
+  }
+  return defense;
+};
