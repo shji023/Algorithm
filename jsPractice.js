@@ -52,7 +52,7 @@ function solution(nums) {
   return students.filter((total) => 0 < total);
 }
 
-//2. 배열, DFS - 수정 필요 if dfs 문이 작동하지않음
+//2. 배열, DFS - 수정 필요 if dfs 문이 작동하지않음 - 해결 실패
 const dfs = (x, y, word, puzzle, index) => {
   if (x <= -1 || x >= 4 || y <= -1 || y >= 4) {
     return false;
