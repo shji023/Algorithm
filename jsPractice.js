@@ -183,3 +183,34 @@ const solve = (time, distance) => {
   }
   return defense;
 };
+
+//숫자 뒤집기 - string으로 변경하지 않는다 (문제조건 잘읽기)
+function solution(num) {
+  let len = 0;
+  let result = 0;
+  let temp = 0;
+  let isNegative = false;
+  temp = num;
+  while (temp) {
+    temp = parseInt(temp / 10);
+    len += 1;
+  }
+  if (num < 0) {
+    num = num * -1;
+    isNegative = true;
+  }
+  temp = num;
+  for (let i = 1; i < len + 1; i++) {
+    remainder = temp % 10;
+    temp = parseInt(temp / 10);
+    result = result * 10 + remainder;
+  }
+  if (100000 < result) {
+    return 0;
+  }
+  return isNegative ? result * -1 : result;
+}
+/*
+더 간단한 방법
+for(let i=num; i i=Math.trunc(i/10))
+*/
