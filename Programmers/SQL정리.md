@@ -29,3 +29,9 @@
 - IS NOT NULL: 특정 컬럼이 있을때 WHERE __ IS NOT NULL 이렇게 사용가능
 - IFNULL: IFNULL(Column명, "Null일 경우 대체 값")
 - COALESCE(Column명1, Column명2, Column명3, Column명4): Column1 ~ 4 중 NULL이 아닌 첫 번째 Column을 출력
+
+<b>LEFT JOIN</b>
+첫번째 테이블을 기준으로, 두번째 테이블을 조합하는 JOIN
+```
+첫번째 테이블 이름 LEFT JOIN 두번째 테이블 이름 ON 조건
+```
