@@ -69,3 +69,8 @@ ORDER BY DATETIME
 LIMIT 3;
 
 ```
+- 같지 않음을 표현하는 연산자
+  - !=
+  - ^=
+  - <>
+  - NOT 칼럼명 = 
