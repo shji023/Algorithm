@@ -35,3 +35,5 @@
 ```
 첫번째 테이블 이름 LEFT JOIN 두번째 테이블 이름 ON 조건
 ```
+<img src="https://user-images.githubusercontent.com/60960130/151730186-b215aa6b-c830-4335-bb07-9381ca62354a.png" width="350" height="200"/>
+
