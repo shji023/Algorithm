@@ -46,3 +46,11 @@
 첫번째 테이블 이름 LEFT JOIN 두번째 테이블 이름 ON 조건
 ```
 <img src="https://user-images.githubusercontent.com/60960130/151759606-72c1582d-e56b-4646-9e87-4820233c25f9.png" width="350" height="200"/>
+
+<b>INNER JOIN</b>
+INNER JOIN = JOIN = CROSS JOIN
+```
+첫번째 테이블 이름 INNER JOIN 두번째 테이블 이름 ON 조건
+```
+<img src="https://user-images.githubusercontent.com/60960130/151760791-ab0b3dd5-851a-45eb-8322-ea7dc623cdf5.png" width="350" height="200"/>
+
