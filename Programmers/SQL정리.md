@@ -37,3 +37,5 @@
 ```
 <img src="https://user-images.githubusercontent.com/60960130/151730186-b215aa6b-c830-4335-bb07-9381ca62354a.png" width="350" height="200"/>
 
+예를들어 조건이 첫번째 테이블 이름.NAME = 두번째 테이블 이름.NAME
+이 경우 두개의 NAME값이 일치하지 않는 경우에 테이블의 모든 필드 NULL
