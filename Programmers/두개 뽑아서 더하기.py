@@ -8,3 +8,5 @@ def solution(numbers):
         answer.append(i)
     answer.sort()
     return answer
+
+# return sorted(list(set(answer)))
