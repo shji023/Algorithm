@@ -14,3 +14,19 @@ for x in e:
         if x % s[1] > 0:
             cnt += 1
 print(cnt)
+
+# 다시 풀기
+N = int(input())
+arr = list(map(int, input().split()))
+B, C = map(int, input().split())
+
+cnt = 0
+for i in range(len(arr)):
+    arr[i] = arr[i]-B
+    cnt += 1
+    if arr[i] > 0:
+        if arr[i] % C > 0:
+            cnt += (arr[i]//C)+1
+        else:
+            cnt += (arr[i] // C)
+print(cnt)
